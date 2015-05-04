@@ -1,4 +1,4 @@
-program Hello;
+program Prime;
 var
 	primeSet:set of byte;
 	i,j:integer;
