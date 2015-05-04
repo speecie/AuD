@@ -6,9 +6,9 @@ var
 begin
   writeln ('Start');
   primeSet := [2..255];
-  for i:=2 to 255 do
+  for i:=2 to 255 do 
   begin
-  	if i in primeSet then 
+  	if i in primeSet then
   		begin
   			j:=2;
   			while ((i*j)<256) do 
