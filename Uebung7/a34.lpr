@@ -13,8 +13,8 @@ begin
   restmenge:=[];
   for i:=0 to length(eingabe) do
   begin
-    if eingabe[i].gross in restmenge then WriteLn('nix') else Include(restmenge,eingabe[i].gross);
-    if eingabe[i].klein in restmenge then WriteLn('nix') else Include(restmenge,eingabe[i].klein);
+    if not (eingabe[i].gross in restmenge) then Include(restmenge,eingabe[i].gross);
+    if not (eingabe[i].klein in restmenge) then Include(restmenge,eingabe[i].klein);
   end;
   erzeugeRestMenge:=restmenge;
 end;
@@ -47,7 +47,7 @@ begin
     eingabe[10].gross:='6';
     menge_fertsch:=[];
     menge_rest:=erzeugeRestMenge(eingabe);
-    for b in menge_rest do WriteLn(b);
+    //for b in menge_rest do WriteLn(b);
     n:=1;
     repeat
      menge_arbeit:=menge_rest-menge_fertsch;
@@ -62,7 +62,7 @@ begin
             n:=n+1;
          end;
     until menge_arbeit=[];
-    for i:=1 to length(ergebnis_liste) do WriteLn(ergebnis_liste[i]);
+    for i:=1 to length(ergebnis_liste)+1 do WriteLn(ergebnis_liste[i]);
     ReadLn(b);
 end.
 
